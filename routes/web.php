@@ -43,6 +43,7 @@ Route::get('/notify', function() {
 Route::prefix('pages')->middleware('auth')->as('pages.')->group(function () {
     Route::get('/profile', Controllers\Login\ProfileController::class)->name('auth.profile');
     include 'modules/dashboard.php';
+    include 'modules/couple.php';
     include 'modules/user.php';
     include 'modules/billing.php';
     include 'modules/role.php';

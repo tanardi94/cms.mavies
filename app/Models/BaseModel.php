@@ -4,26 +4,33 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
 class BaseModel extends Model
 {
+    use HasFactory;
+
+    protected $guarded = [
+        'id',
+    ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($query) {
+            $query->uuid = Str::uuid();
+            $query->view_id = Str::uuid();
+        });
+    }
+
     public function getRouteKeyName()
     {
         return 'uuid';
     }
 
-    protected static function boot()
+    public function scopeFindByUID($query, $id)
     {
-        parent::boot();
-        static::creating(function ($q) {
-            $q->uuid = Str::uuid();
-        });
-    }
-
-    public function scopeFindByUID($query, $uid)
-    {
-        return $query->where('uuid', $uid);
+        return $query->where('uuid', $id)->first();
     }
 }

@@ -23,19 +23,19 @@
 
         <li class="nav-item">
             <a class="nav-link text-white
-            @if (Request::is('*pages/users*'))
+            @if (Request::is('*pages/couple*'))
             active bg-gradient-primary
             @endif
-            " href="{{ route('pages.user.index') }}">
+            " href="{{ route('pages.couple.index') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">group</i>
                 </div>
-                <span class="nav-link-text ms-1">Users</span>
+                <span class="nav-link-text ms-1">Couples</span>
             </a>
         </li>
 
         {{-- Managing Roles --}}
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link text-white
             @if (Request::is('*pages/roles*'))
             active bg-gradient-primary
@@ -46,7 +46,7 @@
                 </div>
                 <span class="nav-link-text ms-1">Roles</span>
             </a>
-        </li>
+        </li> --}}
 
 
         {{-- Managing Categories --}}
@@ -63,7 +63,7 @@
             </a>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link text-white " href="../pages/tables.html">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">table_view</i>
@@ -102,8 +102,8 @@
                 </div>
                 <span class="nav-link-text ms-1">Notifications</span>
             </a>
-        </li>
-        <li class="nav-item mt-3">
+        </li> --}}
+        {{-- <li class="nav-item mt-3">
             <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
         </li>
         <li class="nav-item">
@@ -113,8 +113,8 @@
                 </div>
                 <span class="nav-link-text ms-1">Profile</span>
             </a>
-        </li>
-        <li class="nav-item">
+        </li> --}}
+        {{-- <li class="nav-item">
             <a class="nav-link text-white " href="../pages/sign-in.html">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">login</i>
@@ -129,7 +129,7 @@
                 </div>
                 <span class="nav-link-text ms-1">Sign Up</span>
             </a>
-        </li>
+        </li> --}}
     </ul>
 </div>
 </div>
