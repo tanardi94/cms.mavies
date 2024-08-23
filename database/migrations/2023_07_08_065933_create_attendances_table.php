@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('social_logins', function (Blueprint $table) {
+        Schema::create('attendances', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('type')->default('google');
-            $table->string('value');
+            $table->unsignedBigInteger('event_id');
+            $table->unsignedBigInteger('participant_id');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('social_logins');
+        Schema::dropIfExists('attendances');
     }
 };
