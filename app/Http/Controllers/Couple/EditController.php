@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Couple;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Couple;
 use Illuminate\Http\Request;
 
 class EditController extends Controller
@@ -11,19 +11,19 @@ class EditController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request, User $user)
+    public function __invoke(Request $request, Couple $couple)
     {
         $breadcrumbs = [
             [
-                'url' => route('pages.user.index'),
-                'title' => 'Manage Users',
+                'url' => route('pages.couple.index'),
+                'title' => 'Manage Couples',
             ],
             [
-                'url' => route('pages.user.edit', $user->uuid),
-                'title' => 'Edit User'
+                'url' => route('pages.couple.edit', $couple->uuid),
+                'title' => 'Edit Couple'
             ]
         ];
 
-        return view('pages.user.edit', compact('user', 'breadcrumbs'));
+        return view('pages.couple.edit', compact('couple', 'breadcrumbs'));
     }
 }

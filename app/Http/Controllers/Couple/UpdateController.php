@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Couple;
 
 use App\Helpers\NotificationHelper;
 use App\Http\Controllers\Controller;

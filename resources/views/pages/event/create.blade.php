@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.main')
 
 
 
@@ -16,7 +16,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            {!! Form::open(['route' => 'event.store', 'enctype' => 'multipart/form-data', 'files' => true]) !!}
+            {!! Form::open(['route' => 'pages.event.store', 'enctype' => 'multipart/form-data', 'files' => true]) !!}
                 @include('pages.event._form', ['submitButtonText' => 'Simpan', 'couples' => $couples])
             {!! Form::close() !!}
         </div>

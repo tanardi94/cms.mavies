@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('navbar')
-    @include('partials.navbar', ['breadcrumbs' => $breadcrumbs]);
+    @include('partials.navbar', ['breadcrumbs' => $breadcrumbs['urls']]);
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
             <div class="card-header pb-0 p-3">
                 <div class="row">
                     <div class="col-6 d-flex align-items-center">
-                        <h6 class="mb-0">Manage Couples</h6>
+                        <h6 class="mb-0">{{ $breadcrumbs['table_title'] }}</h6>
                     </div>
                     <div class="col-6 text-end">
                         <a class="btn bg-gradient-dark mb-0" href="{{ route('pages.couple.create') }}"><i

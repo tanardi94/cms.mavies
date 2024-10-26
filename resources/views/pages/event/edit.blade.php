@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.main')
 
 
 
@@ -16,7 +16,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            {!! Form::model($event, ['route' => ['event.update', $event->uuid], 'method' => 'PATCH', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
+            {!! Form::model($event, ['route' => ['pages.event.update', $event->uuid], 'method' => 'PATCH', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
                 @include('pages.event._form', ['submitButtonText' => 'Simpan'])
             {!! Form::close() !!}
         </div>

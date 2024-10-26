@@ -1,59 +1,44 @@
-@extends('layouts.admin')
+@extends('layouts.main')
 
-@section('extra-head')
-<link rel="stylesheet" href="{{ asset('css/datatables.min.css') }}">
+@section('navbar')
+    @include('partials.navbar', ['breadcrumbs' => $breadcrumbs['urls']]);
 @endsection
 
 @section('content')
 
-    <div class="page-breadcrumb bg-white">
-        <div class="row align-items-center">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Events</h4>
-            </div>
-            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                <div class="d-md-flex">
-                    <ol class="breadcrumb ms-auto">
-                        <li><a href="#" class="fw-normal"></a></li>
-                    </ol>
-                    <a href="{{ route('event.create') }}"
-                        class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Create Event</a>
+<div class="col-md-12 mb-lg-0 mb-4">
+    <div class="card mt-4">
+        <div class="card-header pb-0 p-3">
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <h6 class="mb-0">{{ $breadcrumbs['table_title']}}</h6>
                 </div>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    </div>
-
-<div class="container-fluid">
-<div class="row">
-    <div class="col-sm-12">
-        <div class="white-box">
-            <h3 class="box-title">Tabel Event</h3>
-            <div class="table-responsive">
-
-                <table class="table text-nowrap table-event">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Tag</th>
-                            <th>Couple</th>
-                            <th>Address</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+                <div class="col-6 text-end">
+                    <a class="btn bg-gradient-dark mb-0" href="{{ route('pages.couple.create') }}"><i
+                            class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Couple</a>
+                </div>
             </div>
         </div>
+        <div class="card-body p-3">
+            <table class="table table-responsive data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Tag</th>
+                        <th>Couples</th>
+                        <th>Address</th>
+                        <th>Date</th>
+                        <th>Schedule</th>
+                        <th width="105px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-</div>
-
-
-
 @endsection
 
 @section('scripts')
@@ -68,7 +53,7 @@
             responsive: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('event.datatables') }}",
+                url: "{{ route('pages.event.datatables') }}",
                 error: function(xhr, error, code) {
                     alert("Timeout saat mengambil data, silahkan refresh")
                 }
